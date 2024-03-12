@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Display.css'
-const Display = ({data}) => {
+
+const Display = ({data, handleVisitedCountry}) => {
     
     const [isVisited, setIsVisited] = useState(false)
 
@@ -18,6 +19,8 @@ const Display = ({data}) => {
             <p>Population: {population} </p>
             <p>Area: {area} </p>
             <p>Code: {cca3} </p>
+            <button onClick={ () => handleVisitedCountry(data)} >Mark As Visited</button>
+            <br />
             <button onClick={toggleVisited} >{isVisited? "visited" : "Going"}</button>
             <h2>{ isVisited? "Share your experience on this country" : "Go and explore this country"}</h2>
         </div>
