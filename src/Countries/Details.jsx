@@ -33,6 +33,17 @@ const Details = () => {
 
     //display visited country flag
   
+    const [visitedCountryFlag, setVisitedCountryFlag] = useState([])
+
+    const handleFlag = (flag) => {
+      console.log(flag);
+
+      const storeFlag = [...visitedCountryFlag, flag];
+
+      console.log(storeFlag);
+
+      setVisitedCountryFlag(storeFlag)
+    }
     return (
         <div>
 
@@ -44,6 +55,11 @@ const Details = () => {
               }
 
             </ul>
+
+            {
+              visitedCountryFlag.map( (flag, index) => <img key={index} src={flag} alt={'flag Image'} style={{width: '70px'}} />)
+            }
+            
           </div>
 
             <div className='country'>
